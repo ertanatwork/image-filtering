@@ -51,8 +51,8 @@ import { filterImageFromURL, deleteLocalFiles, isValidImageUrl } from './util/ut
     .catch(err => {
       console.log("Error while filtering image", err);
       res
-        .status(400)
-        .json({ msg: "Bad request" });
+        .status(500)
+        .json({ msg: "Bad request", err });
     });
   });
 
