@@ -43,6 +43,6 @@ export async function deleteLocalFiles(files:Array<string>): Promise<boolean> {
 }
 
 // https://stackoverflow.com/questions/9714525/javascript-image-url-verify
-export const isValidImage = (url: string) => {
+export const isValidImageUrl = (url: string) => {
     return(url.match(/\.(jpeg|jpg|png)$/) != null);
 }

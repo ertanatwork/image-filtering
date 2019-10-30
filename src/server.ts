@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import { filterImageFromURL, deleteLocalFiles, isValidImage } from './util/util';
+import { filterImageFromURL, deleteLocalFiles, isValidImageUrl } from './util/util';
 
 (async () => {
 
@@ -32,7 +32,7 @@ import { filterImageFromURL, deleteLocalFiles, isValidImage } from './util/util'
   app.get("/filteredimage", (req: Request, res: Response): void => {
     const { image_url } = req.query;
 
-    if (!isValidImage(image_url)) {
+    if (!isValidImageUrl(image_url)) {
       res
         .status(400)
         .json({ msg: "Not a valid url" });
